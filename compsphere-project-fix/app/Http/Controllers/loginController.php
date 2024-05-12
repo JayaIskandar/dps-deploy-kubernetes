@@ -8,18 +8,24 @@ use Illuminate\Support\Facades\Auth;
 
 class loginController extends Controller
 {
-    public function index() {
-        return view('login-register/login', [
+    public function index()
+    {
+        return view(
+            'login-register/login', [
             'title' => 'Login'
-        ]);
+            ]
+        );
     }
     
     /* Inspired by: https://laravel.com/docs/10.x/authentication#main-content */
-    public function authenticate(Request $request) {
-        $credentials = $request->validate([
+    public function authenticate(Request $request)
+    {
+        $credentials = $request->validate(
+            [
             'email' => 'required|email:dns',
             'password' => 'required'
-        ]);
+            ]
+        );
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
@@ -30,7 +36,8 @@ class loginController extends Controller
     }
 
     /* Inspired by: https://laravel.com/docs/10.x/authentication#logging-out */
-    public function logout(Request $request) {
+    public function logout(Request $request)
+    {
         Auth::logout();
  
         $request->session()->invalidate();

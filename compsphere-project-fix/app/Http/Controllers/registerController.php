@@ -10,18 +10,24 @@ use App\Models\User;
 
 class registerController extends Controller
 {
-    public function index() {
-        return view('login-register/register', [
+    public function index()
+    {
+        return view(
+            'login-register/register', [
             'title' => 'Register'
-        ]);
+            ]
+        );
     }
 
-    public function store(Request $request) {
-        $validatedData = $request->validate([
+    public function store(Request $request)
+    {
+        $validatedData = $request->validate(
+            [
             'name' => 'required',
             'email' => 'required|email:dns|unique:users',
             'password' => 'required|min:8|max:255'
-        ]);
+            ]
+        );
 
         $validatedData['password'] = Hash::make($validatedData['password']);
         

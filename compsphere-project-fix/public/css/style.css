@@ -316,7 +316,7 @@ body {
   border-radius: 4px;
   font-weight: 700;
   -webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
 }
 
 #upBtn:hover {
@@ -359,8 +359,8 @@ body {
   display: inline;
   padding: 0;
   opacity: 1;
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
 }
 #footer .partner a:hover{
   opacity: 0.8;
